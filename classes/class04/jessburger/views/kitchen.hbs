@@ -1,0 +1,11 @@
+<h1>Workin' the 9-5</h1>
+<ul>
+  {{#each orders}}
+  <li>
+    <form id="{{this.id}}" action="completeOrder/{{this.id}}" method="POST">
+      {{this.ingredients}} -- <input type="submit" value="Completed">
+    </form>
+  </li>
+  {{/each}}
+</form>
+</ul>

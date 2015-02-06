@@ -1,0 +1,8 @@
+<form id="orderForm" action="postOrder" method="POST">
+  {{#each ings}}
+  <input type="checkbox" name="{{this.name}}" {{disabledItem this}} price="{{this.price}}">
+  	{{this.name}} -- {{currency this.price}}<br>
+  {{/each}}
+  <input type="submit" value="Submit Order">
+</form>
+Sum total: <span id="orderSum" amt="0">0.00</span>

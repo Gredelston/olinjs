@@ -1,0 +1,18 @@
+<ul id="ingredients">
+  {{#each ings}}
+  <li id="{{this._id}}">
+    <span id="name_{{this._id}}">{{this.name}}</span>
+    --
+    <span id="price_{{this._id}}">{{currency this.price}}</span>
+
+    (In-stock:
+    <span id="stock_{{this._id}}" stock={{this.inStock}}>{{this.inStock}}</span>
+    )
+    
+    <form class="edit_button" id="edit_button_{{this._id}}">
+      <input type="submit" value="Edit item">
+    </form>
+  </li>
+  {{/each}}
+  <li id="add_section"></li>
+</ul>
