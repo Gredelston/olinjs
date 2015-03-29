@@ -1,10 +1,10 @@
 {{#each twotes}}
-<li class="twote" id="{{this._id}}">
+<li class="twote" id="{{this._id}}" username="{{this.user}}" highlighted="false">
   <span class="twote-text">
     {{this.text}}
   </span>
   <br />
-  <p class="twote-user" align="right">
+  <p class="twote-user" username="{{this.user}}" align="right">
     --{{this.user}}
 
     {{#ifeq this.user ../sessionUser}}

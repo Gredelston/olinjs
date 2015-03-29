@@ -51,11 +51,6 @@ body {
 	background-color: #f39c12;
 }
 
-/*.box {
-	border-style: solid;
-	border-width: 2px;
-}*/
-
 .box {
 	border-right-color: #7f8c8d;
 	border-bottom-color: #7f8c8d;
@@ -69,6 +64,12 @@ body {
 
 h2 {
 	margin-left: 5%;
+}
+
+.highlighted {
+	border: #e85242;
+	border-width: 3px;
+	border-style: solid;
 }
 
 /* TWOTES */

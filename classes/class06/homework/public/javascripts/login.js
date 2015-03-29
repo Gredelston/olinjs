@@ -2,7 +2,6 @@ $(document).ready(function() {
 
   $('#login-form').submit(function(event) {
     event.preventDefault();
-    console.log("Clikc!")
     var user = $('#login-text')[0].value.trim();
     $.post('/loginSubmit', {user: user})
       .done(function(data, status) {
