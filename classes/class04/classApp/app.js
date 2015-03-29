@@ -3,16 +3,14 @@ var path = require("path");
 var logger = require("morgan");
 var cookieParser = require("cookie-parser");
 var bodyParser = require("body-parser");
-var exphbs = require("express-handlebars");
-var mongoose = require("mongoose");
+var exphbs  = require("express-handlebars");
 
 var index = require("./routes/index");
-var cats = require("./routes/cats");
+var getCat = require("./routes/getCat");
 
 var app = express();
 
-var PORT = process.env.PORT || 3000;
-var mongoURI = process.env.MONGOURI || "mongodb://localhost/test";
+var PORT = 3000;
 
 app.engine("handlebars", exphbs({defaultLayout: "main"}));
 app.set("view engine", "handlebars");
@@ -24,13 +22,9 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", index.home);
-app.get("/cats", cats.list);
-app.get("/cats/new", cats.new);
-app.get("/cats/bycolor/:color", cats.list);
-app.get("/cats/delete/old", cats.delete);
-
-mongoose.connect(mongoURI);
+app.get("/getCat", getCat.getCatGET);
+app.post("/getCat", getCat.getCatPOST);
 
 app.listen(PORT, function() {
-  console.log("Application running on port:", PORT);
+  console.log("App running on port:", PORT);
 });
